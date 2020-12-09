@@ -16,4 +16,12 @@ class UtilsTest {
         assertTrue(true);
     }
 
+    @Test
+    void sumIs2(){
+        Utils utils = new Utils();
+        int expectedValue = 2;
+        int actualValue = utils.sum(1,1);
+        assertEquals( expectedValue, actualValue); // porovnava dve hodnity ci sa rovnaju
+    }
+
 }
