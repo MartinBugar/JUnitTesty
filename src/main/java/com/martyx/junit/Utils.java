@@ -14,4 +14,8 @@ public class Utils {
         return suma.add(suma.divide(BigDecimal.valueOf(100)).
                 multiply(BigDecimal.valueOf(aktualnaDan)));
     }
+
+    public double  obsahTrojuholnika(double stranaA, double vyskaA){
+        return 0.5 * stranaA * vyskaA;
+    }
 }

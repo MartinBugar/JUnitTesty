@@ -29,7 +29,7 @@ class UtilsTest {
     @Test
     void suma100PlusDanJe120(){
         Utils utils = new Utils();
-        assertEquals(BigDecimal.valueOf(120L), utils.pripocitajDan(BigDecimal.valueOf(100L)) );
+
     }
 
     @Test
@@ -44,6 +44,18 @@ class UtilsTest {
         Utils utils = new Utils();
         assertNotEquals(BigDecimal.valueOf(100).setScale(2),
         utils.pripocitajDan(BigDecimal.valueOf(10).setScale(2)), "Suma 10 + Dan nie je 100");
+    }
+
+    @Test
+    public void obsahTrojuholnikaJe3priDlzkeStrany2AVyskaNaStranu3(){
+        Utils utils = new Utils();
+        assertEquals(3, utils.obsahTrojuholnika(2,3), "Metoda ma vypocitat obsah trojuholnika");
+    }
+
+    @Test
+    public void obsahTrojuholnikaJe10priDlzkeStrany4AVyskaNaStranu5(){
+        Utils utils = new Utils();
+        assertEquals(10, utils.obsahTrojuholnika(4,5), "Metoda ma vypocitat obsah trojuholnika");
     }
 
 }
