@@ -58,4 +58,24 @@ class UtilsTest {
         assertEquals(10, utils.obsahTrojuholnika(4,5), "Metoda ma vypocitat obsah trojuholnika");
     }
 
+    @Test
+    public void vysledokDelenia10a2je5(){
+        Utils utils = new Utils();
+        assertEquals(5,utils.delenie(10,2));
+    }
+
+    @Test
+    void  delenie0HadzeVynimku(){
+        Utils utils = new Utils();
+        assertThrows(ArithmeticException.class,
+                () -> utils.delenie(10,0),
+                "Pri deleni 0 musi byt vynimka");
+    }
+
+    @Test
+    void nemozeNastatVynimka(){
+        Utils utils = new Utils();
+        assertDoesNotThrow(()->utils.workWithString());
+    }
+
 }
