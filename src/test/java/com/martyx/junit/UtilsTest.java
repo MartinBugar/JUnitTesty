@@ -1,8 +1,6 @@
 package com.martyx.junit;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
 
@@ -11,6 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class UtilsTest {
 
     private Utils utils;
+
+    @BeforeAll
+    static void beforeAllMethod () { // musi byt staticka, pretoze sa spusti este pred vytvorenim instancie triedy
+        System.out.println(" spustanie before all metody");
+    }
+
+    @AfterAll
+    static void afterAllMetod (){
+        System.out.println("spustenie metody afterAll"); // nakoniec po vswetkom sa pusti toto jeden kratb
+    }
 
     @BeforeEach // pred kaydzm spustenim kazdej metody sa pusti toto
     void initBeforeEachMethod(){
@@ -29,6 +37,7 @@ class UtilsTest {
     }
 
     @Test
+    @DisplayName("Test, ktory vzdy prejde")
     void passedTest (){
         assertTrue(true);
     }
