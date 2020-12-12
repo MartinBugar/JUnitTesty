@@ -1,10 +1,16 @@
 package com.martyx.junit;
 
+import jdk.jfr.Enabled;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.EnabledOnJre;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.JRE;
+import org.junit.jupiter.api.condition.OS;
 
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 class UtilsTest {
 
@@ -46,6 +52,7 @@ class UtilsTest {
     @Test
     void sumIs2(){
       //  Utils utils = new Utils();
+        assumeTrue(true); // veci za tymto sa vykonaju len je je toto true
         int expectedValue = 2;
         int actualValue = utils.sum(1,1);
         assertEquals( expectedValue, actualValue); // porovnava dve hodnity ci sa rovnaju
@@ -108,5 +115,19 @@ class UtilsTest {
      //   Utils utils = new Utils();
         assertDoesNotThrow(()->utils.workWithString());
     }
+
+    @Test
+    @EnabledOnOs(OS.WINDOWS) // spusti sa tento test len na windowse
+    void overCestuNaWinSubor(){
+        System.out.println("overujem cestu pre windows");
+    }
+
+    @Test
+    @EnabledOnOs(OS.LINUX) // spusti sa tento test len na windowse
+    @EnabledOnJre(JRE.JAVA_8) // spusti sa na jave 8
+    void overCestuNaLinuxSubor(){
+        System.out.println("overujem cestu pre Linux");
+    }
+
 
 }
