@@ -1,6 +1,6 @@
 package com.martyx.junit;
 
-import jdk.jfr.Enabled;
+
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.EnabledOnJre;
 import org.junit.jupiter.api.condition.EnabledOnOs;
@@ -84,16 +84,19 @@ class UtilsTest {
         utils.pripocitajDan(BigDecimal.valueOf(10).setScale(2)), "Suma 10 + Dan nie je 100");
     }
 
-    @Test
-    public void obsahTrojuholnikaJe3priDlzkeStrany2AVyskaNaStranu3(){
-     //   Utils utils = new Utils();
-        assertEquals(3, utils.obsahTrojuholnika(2,3), "Metoda ma vypocitat obsah trojuholnika");
-    }
+    @Nested
+    class SkupinaTestov {
+        @Test
+        public void obsahTrojuholnikaJe3priDlzkeStrany2AVyskaNaStranu3(){
+            //   Utils utils = new Utils();
+            assertEquals(3, utils.obsahTrojuholnika(2,3), "Metoda ma vypocitat obsah trojuholnika");
+        }
 
-    @Test
-    public void obsahTrojuholnikaJe10priDlzkeStrany4AVyskaNaStranu5(){
-    //    Utils utils = new Utils();
-        assertEquals(10, utils.obsahTrojuholnika(4,5), "Metoda ma vypocitat obsah trojuholnika");
+        @Test
+        public void obsahTrojuholnikaJe10priDlzkeStrany4AVyskaNaStranu5(){
+            //    Utils utils = new Utils();
+            assertEquals(10, utils.obsahTrojuholnika(4,5), "Metoda ma vypocitat obsah trojuholnika");
+        }
     }
 
     @Test
