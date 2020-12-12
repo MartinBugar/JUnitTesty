@@ -51,8 +51,12 @@ class UtilsTest {
         assertEquals( expectedValue, actualValue); // porovnava dve hodnity ci sa rovnaju
     }
 
-    @Test
-    void suma100PlusDanJe120(){
+    @RepeatedTest(5) //5 5 krat sa zopakuje test
+    void suma100PlusDanJe120(RepetitionInfo repetitionInfo){
+        int currentRepetition = repetitionInfo.getCurrentRepetition();
+        int totalRepetition = repetitionInfo.getTotalRepetitions();
+        System.out.println(currentRepetition);
+        System.out.println(totalRepetition);
       //  Utils utils = new Utils();
         assertEquals(BigDecimal.valueOf(120),
                 utils.pripocitajDan(BigDecimal.valueOf(100)));
