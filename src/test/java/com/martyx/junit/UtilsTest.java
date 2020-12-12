@@ -38,6 +38,7 @@ class UtilsTest {
 
     @Test
     @DisplayName("Test, ktory vzdy prejde")
+    @Disabled // tento test sa nespusti
     void passedTest (){
         assertTrue(true);
     }
