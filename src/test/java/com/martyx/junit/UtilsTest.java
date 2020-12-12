@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assumptions.*;
 
 class UtilsTest {
 
+    private static final String MATEMATIKA = "Matematika";
     private Utils utils;
 
     @BeforeAll
@@ -133,6 +134,7 @@ class UtilsTest {
     }
 
     @Test
+    @Tag(MATEMATIKA)
     void testScitavanie (){
         assertAll(
                 () -> assertEquals(30, utils.sum(10,20)),
