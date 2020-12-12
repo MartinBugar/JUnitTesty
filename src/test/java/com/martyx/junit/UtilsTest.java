@@ -132,5 +132,14 @@ class UtilsTest {
         System.out.println("overujem cestu pre Linux");
     }
 
+    @Test
+    void testScitavanie (){
+        assertAll(
+                () -> assertEquals(30, utils.sum(10,20)),
+                () -> assertEquals(10, utils.sum(5,5)),
+                () -> assertEquals(2, utils.sum(1,1)),
+                () -> assertEquals(5, utils.sum(3,2))
+        );
+    }
 
 }
